@@ -10,7 +10,7 @@ return [
     | This is the name of your application.
     | 
     */
-    'name' => 'Tres Framework',
+    'name' => 'Web Calc',
     
     /*
     |--------------------------------------------------------------------------

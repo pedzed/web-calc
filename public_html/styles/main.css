@@ -14,33 +14,16 @@ p {
 }
 
 #main-content {
-    width: 800px;
-    width: 70%;
+    width: 30%;
     margin: 128px auto;
 }
-header.main {
-    margin-bottom: 24px;
-}
-header.main h1 {
-    color: #555;
-}
 
-.tres-logo,
-.tres-logo img {
-    display: block;
-    width: 200px;
-    border: 0;
+#calculator {
+    background: #ccc;
+    padding: 16px;
 }
-
-.inline-code {
-    display: inline-block;
-    background: #eee;
-    color: #333;
-    padding: 3px 5px;
-    margin: 2px 0;
-    border: 1px solid #ddd;
-    -webkit-border-radius: 3px;
-    border-radius: 3px;
+#calculator table {
+    width: 100%;
 }
 
 .clear {

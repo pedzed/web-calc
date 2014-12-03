@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf8" />
-        <title>Home - {{ $appName }}</title>
+        <title>{{ $appName }}</title>
         
         {{ style('styles/main.css') }}
         {{ favicon('favicon.ico') }}
@@ -13,21 +13,16 @@
     </head>
     <body>
         <div id="main-content">
-            <center>
-                <header class="main">
-                    <h1>Welcome to {{ $appName }} {{ $tresVersion }}!</h1>
-                </header>
-                
-                <p>Yet another micro MVC framework. :)</p>
-                
-                <a href="#" class="tres-logo">
-                    <img src="{{ IMAGE_URL }}/tres-logo.png"
-                         width="200"
-                         height="200"
-                         alt="Tres logo"
-                    />
-                </a>
-            </center>
+            <form id="calculator" method="POST" action="<?= URL::route('calculator-post'); ?>">
+                <table border="1">
+                    <tr>
+                        <td><input type="text" name="input" value="0" /></td>
+                    </tr>
+                    <tr>
+                        <td>test</td>
+                    </tr>
+                </table>
+            </form>
         </div>
     </body>
 </html>

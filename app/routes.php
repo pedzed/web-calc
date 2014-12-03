@@ -1,9 +1,15 @@
 <?php
 
 Route::get('/', [
-    'controller' => 'HomeController',
+    'controller' => 'CalcController',
     'method' => 'renderPage',
-    'alias' => 'home'
+    'alias' => 'calculator'
+]);
+
+Route::post('/', [
+    'controller' => 'CalcController',
+    'method' => 'postForm',
+    'alias' => 'calculator-post'
 ]);
 
 Route::notFound([
