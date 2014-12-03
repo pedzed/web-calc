@@ -57,7 +57,6 @@ new Autoload(ROOT_DIR, require_once(DEPENDENCY_MANIFEST));
 | 
 */
 Config::add('app', CONFIG_DIR.'/app.php');
-Config::add('db', CONFIG_DIR.'/database.php');
 Config::add('mailer', CONFIG_DIR.'/mailer.php');
 
 Route::setConfig([
