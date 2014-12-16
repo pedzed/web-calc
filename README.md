@@ -13,3 +13,5 @@ A simple web calculator based on Tres Framework.
     - Square root
 - Old results will be saved in POST
 - Responsive design
+
+![Preview of web calc](https://i.imgur.com/6AYsfM0.png)
