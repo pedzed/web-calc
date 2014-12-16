@@ -11,6 +11,7 @@ A simple web calculator based on Tres Framework.
     - X to the power of two
     - X to the power of Y
     - Square root
+- Basic error checking
 - Old results will be saved in POST
 - Responsive design
 
