@@ -41,22 +41,22 @@ namespace controllers {
             
             switch($_POST['calc_type']){
                 case 'addition':
-                    $result = "{$inputX}\t+\t{$inputY}\t=\t".($inputX + $inputY);
+                    $result = "{$inputX}\t+\t{$inputY}\t=\t".$this->_calcAddition($inputX, $inputY);
                 break;
                 
                 case 'subtraction':
-                    $result = "{$inputX}\t-\t{$inputY}\t=\t".($inputX - $inputY);
+                    $result = "{$inputX}\t-\t{$inputY}\t=\t".$this->_calcSubtraction($inputX, $inputY);
                 break;
                 
                 case 'multiplication':
-                    $result = "{$inputX}\tx\t{$inputY}\t=\t".($inputX * $inputY);
+                    $result = "{$inputX}\tx\t{$inputY}\t=\t".$this->_calcMultiplication($inputX, $inputY);
                 break;
                 
                 case 'multiplication table':
                     $result = '';
                     
                     for($i = 0; $i <= $inputY; $i++){
-                        $result .= "{$inputX}\tx\t{$i}\t=\t".($inputX * $i)."\n";
+                        $result .= "{$inputX}\tx\t{$i}\t=\t".$this->_calcMultiplication($inputX, $i)."\n";
                     }
                 break;
                 
@@ -66,19 +66,19 @@ namespace controllers {
                         break;
                     }
                     
-                    $result = "{$inputX}\t:\t{$inputY}\t=\t".($inputX / $inputY);
+                    $result = "{$inputX}\t:\t{$inputY}\t=\t".$this->_calcDivision($inputX, $inputY);
                 break;
                 
                 case 'power':
-                    $result = "pow({$inputX})\t=\t".(pow($inputX, 2));
+                    $result = "pow({$inputX})\t=\t".$this->_calcPower($inputX, 2);
                 break;
                 
                 case 'power of':
-                    $result = "pow({$inputX}, {$inputY})\t=\t".(pow($inputX, $inputY));
+                    $result = "pow({$inputX}, {$inputY})\t=\t".$this->_calcPower($inputX, $inputY);
                 break;
                 
                 case 'square root':
-                    $result = "sqrt({$inputX})\t=\t".(sqrt($inputX));
+                    $result = "sqrt({$inputX})\t=\t".$this->_calcSquareRoot($inputX);
                 break;
             }
             
@@ -89,6 +89,78 @@ namespace controllers {
                 'calcResult' => $newResult
             ]);
             die();
+        }
+        
+        /**
+         * Calculates an addition.
+         * 
+         * @param  int|float $inputX
+         * @param  int|float $inputY
+         * 
+         * @return int|float
+         */
+        protected function _calcAddition($inputX, $inputY){
+            return $inputX + $inputY;
+        }
+        
+        /**
+         * Calculates a subtraction.
+         * 
+         * @param  int|float $inputX
+         * @param  int|float $inputY
+         * 
+         * @return int|float
+         */
+        protected function _calcSubtraction($inputX, $inputY){
+            return $inputX - $inputY;
+        }
+        
+        /**
+         * Calculates a multiplication.
+         * 
+         * @param  int|float $inputX
+         * @param  int|float $inputY
+         * 
+         * @return int|float
+         */
+        protected function _calcMultiplication($inputX, $inputY){
+            return $inputX * $inputY;
+        }
+        
+        /**
+         * Calculates a division.
+         * 
+         * @param  int|float $inputX
+         * @param  int|float $inputY
+         * 
+         * @return int|float
+         */
+        protected function _calcDivision($inputX, $inputY){
+            return $inputX / $inputY;
+        }
+        
+        /**
+         * Calculates a power.
+         * 
+         * @param  int|float $inputX
+         * @param  int|float $inputY
+         * 
+         * @return int|float
+         */
+        protected function _calcPower($inputX, $inputY){
+            return pow($inputX, $inputY);
+        }
+        
+        /**
+         * Calculates a square root.
+         * 
+         * @param  int|float $inputX
+         * @param  int|float $inputY
+         * 
+         * @return int|float
+         */
+        protected function _calcSquareRoot($inputX){
+            return sqrt($inputX);
         }
         
     }
