@@ -5,8 +5,8 @@
 | Dependency manifest
 |------------------------------------------------------------------------------
 | 
-| This file is used to register dependencies. Dependencies will be 
-| automatically loaded. 
+| This file is used to register dependencies. These dependencies will be 
+| automatically loaded.
 | 
 */
 return [
@@ -31,6 +31,7 @@ return [
         'models'        => 'app/models',
         'controllers'   => 'app/controllers',
         'Tres'          => 'vendor/Tres',
+        'Whoops'        => 'vendor/Whoops',
     ],
     
     /*
@@ -53,7 +54,7 @@ return [
         'Route'             => 'Tres\router\Route',
         'Redirect'          => 'Tres\router\Redirect',
         'URL'               => 'Tres\router\URL',
-        'View'              => 'Tres\core\View',
+        'View'              => 'Tres\templating\View',
     ],
     
     /*
@@ -61,14 +62,14 @@ return [
     | Files
     |--------------------------------------------------------------------------
     | 
-    | If you need to load functions, you can do it here. This may be used for 
-    | other files as well.
+    | If you need to load a specific file, you can do it here.
     | 
     */
     'files' => [
-        'vendor/Tres/functions/config.php',
-        'vendor/Tres/functions/assets.php',
-        'vendor/Tres/functions/quick-debug.php',
+        'app/helpers/assets.php',
+        'app/helpers/array.php',
+        'app/helpers/debug.php',
+        'app/helpers/security.php',
     ],
     
 ];

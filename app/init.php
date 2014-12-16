@@ -18,6 +18,8 @@ define('CONFIG_DIR', APP_DIR.'/config');
 define('CONTROLLER_DIR', APP_DIR.'/controllers');
 define('MODEL_DIR', APP_DIR.'/models');
 define('VIEW_DIR', APP_DIR.'/views');
+define('STORAGE_DIR', APP_DIR.'/storage');
+define('LOG_DIR', STORAGE_DIR.'/logs');
 define('PUBLIC_DIR', ROOT_DIR.'/public_html');
 
 define('PUBLIC_URL', 
@@ -57,6 +59,7 @@ new Autoload(ROOT_DIR, require_once(DEPENDENCY_MANIFEST));
 | 
 */
 Config::add('app', CONFIG_DIR.'/app.php');
+Config::add('db', CONFIG_DIR.'/database.php');
 Config::add('mailer', CONFIG_DIR.'/mailer.php');
 
 Route::setConfig([
@@ -66,6 +69,10 @@ Route::setConfig([
         'dir' => CONTROLLER_DIR
     ]
 ]);
+
+View::$rootURI = VIEW_DIR;
+View::$storageDir = STORAGE_DIR.'/views/';
+
 Tres\mailer\Config::set(Config::get('mailer'));
 
 /*
@@ -89,14 +96,18 @@ date_default_timezone_set(Config::get('app/timezone'));
 | 
 */
 switch(Config::get('app/debug')){
+    default:
+    case 0:
+        error_reporting(E_ALL & ~E_DEPRECATED & ~E_STRICT);
+    break;
+    
     case 2:
+        $whoops = new Whoops\Run;
+        $whoops->pushHandler(new Whoops\Handler\PrettyPageHandler);
+        $whoops->register();
     case 1:
         ini_set('display_errors', 1);
         error_reporting(E_ALL);
     break;
-    
-    case 0:
-    default:
-        error_reporting(E_ALL & ~E_DEPRECATED & ~E_STRICT);
-    break;
 }
+

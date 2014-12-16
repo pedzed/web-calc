@@ -3,13 +3,12 @@
 Route::get('/', [
     'controller' => 'CalcController',
     'method' => 'renderPage',
-    'alias' => 'calculator'
+    'alias' => 'calc'
 ]);
 
 Route::post('/', [
     'controller' => 'CalcController',
-    'method' => 'postForm',
-    'alias' => 'calculator-post'
+    'method' => 'calc'
 ]);
 
 Route::notFound([

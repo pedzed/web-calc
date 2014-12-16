@@ -13,30 +13,67 @@ p {
     margin-bottom: 16px;
 }
 
-#main-content {
-    width: 240px;
-    margin: 128px auto;
+#calc-form {
+    margin-top: 48px;
 }
-
-#calculator {
+#calc-form #form-container input[type="number"] {
+    display: inline-block;
+    width: auto;
+}
+#calc-form #form-container table {
+    /*background: none;*/
+    width: 100%;
+    border: none;
+}
+#calc-form #form-container table tr td {
+    height: 48px;
+    padding: 0;
+}
+#calc-form #form-container .button.secondary {
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 14px 0;
+    margin-bottom: 0;
+}
+#calc-form #form-container .type {
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%;
+    width: 100%;
+}
+#calc-form #form-container .type label {
+    margin-left: 0;
+}
+#calc-form #form-container .type input[type="radio"] {
+    display: none;
+}
+#calc-form #form-container .type input[type="radio"]:checked + label {
+    background: #ccc;
+}
+#calc-form #form-container .button.calc {
+    display: block;
+    width: 100%;
+    padding: 12px 24px;
+}
+#calc-form .content {
     background: #eee;
-    padding: 4px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    padding: 16px;
+    border: 1px solid #ddd;
 }
-#calculator table {
-    width: 100%;
+#calc-form #calc-result-container {
+    margin-top: 16px;
 }
-#calculator table td input[type="text"] {
-    width: 100%;
-    padding: 8px 12px;
-    margin-bottom: 8px;
-}
-#calculator table td .button {
-    width: 100%;
-    padding: 8px 12px;
+#calc-form #calc-result-container #calc-result {
+    min-height: 160px;
 }
 
 .clear {
     clear: both;
+}
+
+@media only screen and (min-width: 40em) {
+    #calc-form #calc-result-container {
+        margin-top: 0;
+    }
 }
