@@ -175,7 +175,7 @@
                                     />
                                     <label class="button secondary"
                                            for="calc-multiplication-table"
-                                    >tafel x</label>
+                                    >table x</label>
                                 </div>
                             </td>
                         </tr>
