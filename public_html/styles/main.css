@@ -14,7 +14,8 @@ p {
 }
 
 #calc-form {
-    margin-top: 48px;
+    margin-top: 16px;
+    margin-bottom: 16px;
 }
 #calc-form #form-container input[type="number"] {
     display: inline-block;
@@ -65,7 +66,7 @@ p {
     margin-top: 16px;
 }
 #calc-form #calc-result-container #calc-result {
-    min-height: 160px;
+    min-height: 276px;
 }
 
 .clear {
@@ -73,6 +74,10 @@ p {
 }
 
 @media only screen and (min-width: 40em) {
+    #calc-form {
+        margin-top: 32px;
+        margin-bottom: 32px;
+    }
     #calc-form #calc-result-container {
         margin-top: 0;
     }
