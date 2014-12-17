@@ -133,23 +133,6 @@
                                 <div class="type">
                                     <input type="radio"
                                            name="calc_type"
-                                           value="square root"
-                                           id="calc-square-root"
-                                           @if(isset($_POST['calc_type']) &&
-                                               $_POST['calc_type'] == 'square root'
-                                           )
-                                               checked
-                                           @endif
-                                    />
-                                    <label class="button secondary"
-                                           for="calc-square-root"
-                                    >&radic;x</label>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="type">
-                                    <input type="radio"
-                                           name="calc_type"
                                            value="power of"
                                            id="calc-power-of"
                                            @if(isset($_POST['calc_type']) &&
@@ -161,6 +144,23 @@
                                     <label class="button secondary"
                                            for="calc-power-of"
                                     >x<sup>y</sup></label>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="type">
+                                    <input type="radio"
+                                           name="calc_type"
+                                           value="square root"
+                                           id="calc-square-root"
+                                           @if(isset($_POST['calc_type']) &&
+                                               $_POST['calc_type'] == 'square root'
+                                           )
+                                               checked
+                                           @endif
+                                    />
+                                    <label class="button secondary"
+                                           for="calc-square-root"
+                                    >&radic;x</label>
                                 </div>
                             </td>
                             <td>
