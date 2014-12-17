@@ -55,7 +55,7 @@ namespace controllers {
                 case 'multiplication table':
                     $result = '';
                     
-                    for($i = 0; $i <= $inputY; $i++){
+                    for($i = 1; $i <= $inputY; $i++){
                         $result .= "{$inputX}\tx\t{$i}\t=\t".$this->_calcMultiplication($inputX, $i)."\n";
                     }
                 break;
