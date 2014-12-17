@@ -24,6 +24,7 @@
                                id="input-x"
                                name="calc_input_x"
                                value="{{ $_POST['calc_input_x'] or '' }}"
+                               step="any"
                                placeholder="0"
                         />
                     </label>
@@ -34,6 +35,7 @@
                                id="input-y"
                                name="calc_input_y"
                                value="{{ $_POST['calc_input_y'] or '' }}"
+                               step="any"
                                placeholder="0"
                         />
                     </label>
