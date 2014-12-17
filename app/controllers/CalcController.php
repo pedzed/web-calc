@@ -71,7 +71,7 @@ namespace controllers {
                 
                 case 'power':
                     $result = "pow({$inputX})\t=\t".$this->_calcPower($inputX, 2);
-                break;
+                break; 
                 
                 case 'power of':
                     $result = "pow({$inputX}, {$inputY})\t=\t".$this->_calcPower($inputX, $inputY);
@@ -100,7 +100,7 @@ namespace controllers {
          * @return int|float
          */
         protected function _calcAddition($inputX, $inputY){
-            return $inputX + $inputY;
+            return $this->_formatNumber($inputX + $inputY);
         }
         
         /**
@@ -112,7 +112,7 @@ namespace controllers {
          * @return int|float
          */
         protected function _calcSubtraction($inputX, $inputY){
-            return $inputX - $inputY;
+            return $this->_formatNumber($inputX - $inputY);
         }
         
         /**
@@ -124,7 +124,7 @@ namespace controllers {
          * @return int|float
          */
         protected function _calcMultiplication($inputX, $inputY){
-            return $inputX * $inputY;
+            return $this->_formatNumber($inputX * $inputY);
         }
         
         /**
@@ -136,7 +136,7 @@ namespace controllers {
          * @return int|float
          */
         protected function _calcDivision($inputX, $inputY){
-            return $inputX / $inputY;
+            return $this->_formatNumber($inputX / $inputY);
         }
         
         /**
@@ -148,7 +148,7 @@ namespace controllers {
          * @return int|float
          */
         protected function _calcPower($inputX, $inputY){
-            return pow($inputX, $inputY);
+            return $this->_formatNumber(pow($inputX, $inputY));
         }
         
         /**
@@ -160,7 +160,11 @@ namespace controllers {
          * @return int|float
          */
         protected function _calcSquareRoot($inputX){
-            return sqrt($inputX);
+            return $this->_formatNumber(sqrt($inputX));
+        }
+        
+        protected function _formatNumber($num){
+            return rtrim(rtrim(sprintf('%.10F', $num), 0), '.');
         }
         
     }
